@@ -3,7 +3,7 @@
  * @returns {(event: SubmitEvent) => void}
  */
 export function createSubmitHandler(callback) {
-    return function (event) {
+    return async function (event) {
         event.preventDefault();
 
         const form = /** @type {HTMLFormElement} */ (event.target);
@@ -11,7 +11,14 @@ export function createSubmitHandler(callback) {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        callback(data, form);
+        try {
+            disableForm(form);
+            await callback(data, form);
+        } catch (err) {
+            // Do nothing
+        } finally {
+            enableForm(form);
+        }
     };
 }
 

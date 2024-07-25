@@ -30,7 +30,7 @@ export async function request(method, url, data) {
 
         if (!response.ok) {
             const error = await response.json();
-            throw new Error(error.message);
+            throw new Error(error.error);
         }
 
         if (response.status == 204) {
@@ -45,6 +45,6 @@ export async function request(method, url, data) {
 }
 
 export const get = /** @param {string} url */ (url) => request('get', url);
-export const post = /** @param {string} url @param {any} data */ (url, data) => request('post', url, data);
-export const put = /** @param {string} url @param {any} data */ (url, data) => request('put', url, data);
+export const post = /** @param {string} url @param {any} [data] */ (url, data) => request('post', url, data);
+export const put = /** @param {string} url @param {any} [data] */ (url, data) => request('put', url, data);
 export const del = /** @param {string} url */ (url) => request('delete', url);

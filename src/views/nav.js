@@ -3,8 +3,7 @@ import { html } from '@lit/lit-html.js';
 export const navTemplate = (hasUser, isAdmin) => html`
 <a href="/">Home</a>
 <a href="/posts">Posts</a>
-${!hasUser && guestNav}
-${hasUser && userNav}
+${hasUser ? userNav() : guestNav()}
 `;
 
 const guestNav = () => html`
@@ -12,4 +11,4 @@ const guestNav = () => html`
 <a href="/register">Register</a>`;
 
 const userNav = () => html`
-<a href="/">Logout</a>`;
+<a href="/logout">Logout</a>`;
