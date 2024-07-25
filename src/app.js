@@ -10,5 +10,5 @@ page('/', homeView);
 page.start();
 
 function homeView() {
-    render(html`<h1>Hello world!</h1>`, document.body)
+    render(html`<h1>Hello world!</h1>`, document.body);
 }
