@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/softuni-forum/softuni-forum.github.io/issues"
   },
-  "homepage": "https://github.com/softuni-forum/softuni-forum.github.io#readme"
+  "homepage": "https://github.com/softuni-forum/softuni-forum.github.io#readme",
+  "dependencies": {
+    "lit-html": "^3.1.4",
+    "page": "^1.11.6"
+  }
 }
