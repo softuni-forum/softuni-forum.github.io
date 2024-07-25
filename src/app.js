@@ -1,17 +1,21 @@
 import page from '@page/page.mjs';
-import { html, render } from '@lit/lit-html.js';
 
-import * as api from './data/api.js';
-import * as userApi from './data/users.js';
-// @ts-ignore
-window.api = api;
-// @ts-ignore
-window.userApi = userApi;
+import { addRender } from './middlewares/render.js';
 
+import { homeView } from './views/home.js';
+
+
+const root = document.querySelector('main');
+const nav = document.querySelector('nav');
+
+if (!root) {
+    throw new ReferenceError('Document has no valid root!');
+}
+if (!nav) {
+    throw new ReferenceError('Document has no valid navigation!');
+}
+
+page(addRender(root));
 page('/', homeView);
 
 page.start();
-
-function homeView() {
-    render(html`<h1>Hello world!</h1>`, document.body);
-}

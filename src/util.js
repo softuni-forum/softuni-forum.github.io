@@ -1,11 +1,17 @@
+/**
+ * @param {(data: any, form?: HTMLFormElement) => void} callback 
+ * @returns {(event: SubmitEvent) => void}
+ */
 export function createSubmitHandler(callback) {
     return function (event) {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
+        const form = /** @type {HTMLFormElement} */ (event.target);
+
+        const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        callback(data, event.target);
+        callback(data, form);
     };
 }
 

@@ -7,6 +7,10 @@ const endpoints = {
     logout: '/logout'
 };
 
+/**
+ * @param {string} username 
+ * @param {string} password 
+ */
 export async function register(username, password) {
     const result = await post(endpoints.register, { username, password });
 
@@ -19,6 +23,10 @@ export async function register(username, password) {
     setUserData(userData);
 }
 
+/**
+ * @param {string} username 
+ * @param {string} password 
+ */
 export async function login(username, password) {
     const result = await post(endpoints.login, { username, password });
 
