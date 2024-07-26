@@ -2,5 +2,5 @@
 - BaaS setup - user profiles, collections, access rights
 - Deployment to GitHub Pages
 - Middleware pattern for dependency injection
-- Admin role
+? Admin role
 * Basic HTML & CSS

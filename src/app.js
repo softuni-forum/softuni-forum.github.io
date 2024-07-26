@@ -9,6 +9,9 @@ import { homeView } from './views/home.js';
 import { loginView } from './views/login.js';
 import { registerView } from './views/register.js';
 import { logoutAction } from './views/logout.js';
+import { postsView } from './views/posts.js';
+import { postDetailsView } from './views/postDetails.js';
+import { createPostView } from './views/createPost.js';
 
 
 const root = document.querySelector('main');
@@ -28,6 +31,9 @@ page('/', homeView);
 page('/login', loginView);
 page('/register', registerView);
 page('/logout', logoutAction);
+page('/posts', postsView);
+page('/posts/:id', postDetailsView);
+page('/create', createPostView);
 
 page.start();
 
