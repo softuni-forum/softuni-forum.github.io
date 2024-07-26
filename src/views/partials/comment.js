@@ -1,9 +1,9 @@
 import { html } from '@lit/lit-html.js';
 
 export const commentTemplate = (data) => html`
-<div>
-    <p>
+<article class="comment">
+    <main>
         ${data.content}
-    </p>
-    <p>By ${data.author.username}</p>
-</div>`;
+    </main>
+    <footer>By ${data.author.username}</footer>
+</article>`;
