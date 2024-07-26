@@ -13,7 +13,10 @@ const postsTemplate = (posts) => html`
 
 /** @type {import('..').SiteView} */
 export async function postsView(ctx) {
+    ctx.showLoader();
+
     const posts = await getRecentPosts();
 
+    ctx.hideLoader();
     ctx.render(postsTemplate(posts.results));
 }

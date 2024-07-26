@@ -6,9 +6,9 @@ import { render } from '@lit/lit-html.js';
  */
 export function addNavigation(navRoot, navTemplate) {
     return function (ctx, next) {
-        const hasUser = Boolean(ctx.user);
+        const username = ctx.user?.username;
 
-        render(navTemplate(hasUser), navRoot);
+        render(navTemplate(username), navRoot);
 
         next();
     };

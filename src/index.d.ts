@@ -7,5 +7,7 @@ declare type AppContext = PageJS.Context & {
         objectId: string,
         username: string
     },
-    render(templateResult: TemplateResult): void
+    render(templateResult: TemplateResult): void,
+    showLoader(): void,
+    hideLoader(): void,
 }
