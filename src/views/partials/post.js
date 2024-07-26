@@ -1,4 +1,4 @@
-import {html} from '@lit/lit-html.js';
+import { html } from '@lit/lit-html.js';
 
 export const postPreviewTemplate = (data) => html`
 <li>

@@ -48,3 +48,11 @@ export const get = /** @param {string} url */ (url) => request('get', url);
 export const post = /** @param {string} url @param {any} [data] */ (url, data) => request('post', url, data);
 export const put = /** @param {string} url @param {any} [data] */ (url, data) => request('put', url, data);
 export const del = /** @param {string} url */ (url) => request('delete', url);
+
+export function createPointer(className, objectId) {
+    return {
+        __type: 'Pointer',
+        className,
+        objectId
+    };
+}
